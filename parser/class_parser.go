@@ -551,7 +551,7 @@ func (p *ClassParser) renderCompositions(structure *Struct, name string, composi
 		if p.renderingOptions.ConnectionLabels {
 			composedString = extends
 		}
-		c = fmt.Sprintf(`"%s" *-- %s"%s.%s"`, c, composedString, structure.PackageName, name)
+		c = fmt.Sprintf(`"%s" <--* %s"%s.%s"`, c, composedString, structure.PackageName, name)
 		orderedCompositions = append(orderedCompositions, c)
 	}
 	sort.Strings(orderedCompositions)
